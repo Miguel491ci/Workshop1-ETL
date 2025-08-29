@@ -1,0 +1,45 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---- System ----
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
+
+# ---- Environment & secrets ----
+.env
+*.ini
+*.cfg
+
+# ---- Power BI ----
+*.tmp
+*.bak
+*.rdl
+*.rds
+
+# ---- SQL dumps ----
+*.sql~
+*.dump
+*.bak.sql
+
+# ---- VSCode / IDE ----
+.vscode/
+.idea/
+*.code-workspace

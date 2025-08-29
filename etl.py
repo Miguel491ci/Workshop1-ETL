@@ -3,15 +3,24 @@ import pandas as pd
 import datetime
 from connection import get_connection
 
-# ===========================
+
 # 1) EXTRACT
-# ===========================
+
 def extract(filepath="Data/candidates.csv"):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(base_dir, filepath)
 
     # Detectar separador automáticamente (; o ,)
     df = pd.read_csv(file_path, sep=None, engine="python")
+
+    
+
+    return df
+
+
+# 2) TRANSFORM
+
+def transform(df):
 
     # Normalizar nombres de columnas
     df.columns = (
@@ -39,13 +48,6 @@ def extract(filepath="Data/candidates.csv"):
         df["application_date"] = pd.to_datetime(
             df["application_date"], errors="coerce", dayfirst=True
         )
-
-    return df
-
-# ===========================
-# 2) TRANSFORM
-# ===========================
-def transform(df):
     # Crear HiredFlag
     df["hired_flag"] = ((df["code_challenge_score"] >= 7) &
                         (df["technical_interview_score"] >= 7)).astype(int)
@@ -80,9 +82,9 @@ def transform(df):
 
     return df, dim_candidate, dim_country, dim_date, dim_seniority, dim_technology
 
-# ===========================
+
 # 3) LOAD
-# ===========================
+
 def load(df, dim_candidate, dim_country, dim_date, dim_seniority, dim_technology):
     conn = get_connection("hiring_excercise")
     cursor = conn.cursor()
@@ -124,9 +126,9 @@ def load(df, dim_candidate, dim_country, dim_date, dim_seniority, dim_technology
 
     conn.commit()
 
-    # ===========================
+
     # FACT TABLE
-    # ===========================
+
     def get_lookup(table, key_col, id_col):
         cursor.execute(f"SELECT {id_col}, {key_col} FROM {table}")
         rows = cursor.fetchall()
