@@ -36,21 +36,21 @@ This design ensures high query performance and data consistency by separating fa
 
 Files included in the project:
 
-connect.py → Contains the logic and permissions for connecting to the database in mysql workbench. Make sure to change the permissions for it to work properly.
-
 Data/candidates.csv → Csv file with the data used in this project
 
-db.py → Has the script to create the database and its tables based on the dimensional model
+src/connect.py → Contains the logic and permissions for connecting to the database in mysql workbench. Make sure to change the permissions for it to work properly.
 
-DB.sql → Backup with the script for creating the database but in sql format 
+src/db.py → Has the script to create the database and its tables based on the dimensional model
 
-etl.py → Main ETL script that connects to sources, transforms the data, and loads it into MySQL.
+src/DB.sql → Backup with the script for creating the database but in sql format 
 
-main.py → Contains the script that runs everything in the project, this is the file you will run.
+src/etl.py → Main ETL script that connects to sources, transforms the data, and loads it into MySQL.
 
-KPIs_&_DAX_Statements.txt → Info about the different KPIs required for the visualization and the DAX statements for PowerBI
+src/main.py → Contains the script that runs everything in the project, this is the file you will run.
 
-Dashboard.pbix → final file with the KPIs and visualization.
+visualization/KPIs_&_DAX_Statements.txt → Info about the different KPIs required for the visualization and the DAX statements for PowerBI
+
+visualization/Dashboard.pbix → final file with the KPIs and visualization.
 
 
 The ETL process was implemented in Python and consists of the following steps:
