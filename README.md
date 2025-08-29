@@ -51,13 +51,18 @@ Creating the attribute HiredFlag and the necessary logic for it to determine whe
 Load:
 The transformed data is inserted into the Data Warehouse in MySQL Workbench.
 
-📂 Files included in the etl/ folder:
+Files included in the etl/ folder:
 
 db.py → Has the script to create the database and its columns based on the dimensional model
+
 DB.sql → Backup with the script for creating the database but in sql format 
+
 connect.py → Contains the logic and permissions for connecting to the database in mysql workbench. Make sure to change the permissions for it to work properly.
+
 etl.py → Main ETL script that connects to sources, transforms the data, and loads it into MySQL.
+
 main.py → Contains the script that runs everything in the project, this is the file you will run.
+
 Dashboard.pbix → final file with the KPIs and visualization.
 
 ## 4. Data Warehouse in MySQL Workbench
