@@ -2,7 +2,8 @@
 
 This section will include a flow diagram explaining the technologies used in the project:
 
-<img width="763" height="559" alt="image" src="https://github.com/user-attachments/assets/2e8dd100-22f6-466b-bd47-0421d7e7ec5d" />
+<img width="772" height="568" alt="image" src="https://github.com/user-attachments/assets/4456d2fb-533e-4608-aa2d-3539e9ec62a3" />
+
 
 ## 2. Dimensional Model
 
@@ -45,6 +46,8 @@ etl.py → Main ETL script that connects to sources, transforms the data, and lo
 
 main.py → Contains the script that runs everything in the project, this is the file you will run.
 
+KPIs_&_DAX_Statements.txt → Info about the different KPIs required for the visualization and the DAX statements for PowerBI
+
 Dashboard.pbix → final file with the KPIs and visualization.
 
 
@@ -83,7 +86,7 @@ inserts.sql → Initial test data population.
 
 The final layer of the project was developed in Power BI, connecting directly to the Data Warehouse in MySQL.
 
-Several KPIs and interactive dashboards were created, including:
+Several KPIs and interactive graphs were created, including:
 
 - Hires by Technology 
 
