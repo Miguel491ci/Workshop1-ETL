@@ -38,6 +38,8 @@ Files included in the project:
 
 connect.py → Contains the logic and permissions for connecting to the database in mysql workbench. Make sure to change the permissions for it to work properly.
 
+Data/candidates.csv → Csv file with the data used in this project
+
 db.py → Has the script to create the database and its tables based on the dimensional model
 
 DB.sql → Backup with the script for creating the database but in sql format 
